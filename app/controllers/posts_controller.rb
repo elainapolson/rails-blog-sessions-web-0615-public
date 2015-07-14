@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :login_required, :only => [:index, :show]
 
   def index
     @posts = Post.all
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit
+  def edit  
   end
 
   def create

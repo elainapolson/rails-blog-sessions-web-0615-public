@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<%= render 'layouts/header' %>
+  
+  <p class="notice">
+    <%=  flash[:notice] %>
+  </p>
+
+<% if logged_in? %>
+<%= link_to "New Post", new_post_path %>
+<% end %>
+
+
 <%= yield %>
 
 </body>
